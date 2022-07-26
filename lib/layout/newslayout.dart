@@ -16,7 +16,7 @@ class NewsLayout extends StatelessWidget {
         {
           //var cubit = NewsCubit.get(context);
           NewsCubit cubit = BlocProvider.of(context);
-          //cubit.getBusinessData();
+          cubit..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
           return Scaffold(
             appBar: AppBar(
               title: Text(
