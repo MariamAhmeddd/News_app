@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/cubit.dart';
 import 'package:testt/cubit/states.dart';
+import 'package:testt/layout/screens/search.dart';
+import 'package:testt/modules/item.dart';
 
 class NewsLayout extends StatelessWidget {
   const NewsLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => NewsCubit(),
-      child: BlocConsumer<NewsCubit,NewsStates>(
+    return BlocConsumer<NewsCubit,NewsStates>(
         listener: (context , state) {},
         builder: (context , state)
         {
@@ -22,6 +22,16 @@ class NewsLayout extends StatelessWidget {
               title: Text(
                 "News App",
               ),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    navigateTo(context, SearchScreen());
+                  },
+                  icon: Icon(
+                    Icons.search,
+                  ),
+                ),
+              ],
             ),
             body: cubit.screens[cubit.currentIndex],
             bottomNavigationBar: BottomNavigationBar(
@@ -34,7 +44,6 @@ class NewsLayout extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
+      );
   }
 }

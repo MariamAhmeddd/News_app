@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/cubit.dart';
+import 'package:testt/cubit/states.dart';
 import 'package:testt/layout/newslayout.dart';
 import 'package:testt/network/dio_helper.dart';
 
@@ -21,10 +23,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
+    return BlocProvider(
+      create : (BuildContext context) => NewsCubit(),
+      child: BlocConsumer<NewsCubit,NewsStates>(
+        listener: (context , state) {},
+        builder: (context , state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+            ),
+            home: NewsLayout(),
+          );
+        },
       ),
-      home: NewsLayout(),
     );
   }
 }

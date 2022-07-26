@@ -33,3 +33,9 @@ class GetTechnologySuccess extends NewsStates {}
 class GetTechnologyfail extends NewsStates {}
 
 class GetTechnologyload extends NewsStates {}
+
+class GetSearchSuccess extends NewsStates {}
+
+class GetSearchfail extends NewsStates {}
+
+class GetSearchload extends NewsStates {}
