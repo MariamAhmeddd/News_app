@@ -17,7 +17,11 @@ class CategoriesScreen extends StatelessWidget {
       {
         var list = NewsCubit.get(context).catagoriesScreens;
         return Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            title: Text(
+              'Categories',
+            ),
+          ),
           body: Column(
             children: [
               Expanded(

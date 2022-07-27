@@ -30,6 +30,9 @@ class MyApp extends StatelessWidget {
         listener: (context , state) {},
         builder: (context , state) {
 
+          NewsCubit cubit = BlocProvider.of(context);
+          cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
+
           //mariam for test
           /*
           return MaterialApp(
@@ -47,32 +50,57 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               scaffoldBackgroundColor: Colors.white,
               appBarTheme: AppBarTheme(
+                iconTheme: IconThemeData(
+                  color: Colors.black87,
+                ),
                 backgroundColor: Colors.white,
                 backwardsCompatibility: false,
                 systemOverlayStyle: SystemUiOverlayStyle(
                   statusBarColor: Colors.white,
                   statusBarIconBrightness: Brightness.dark,
                 ),
+
                 titleTextStyle: TextStyle(
                   color: Colors.black87,
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              /*textTheme: TextTheme(
-                bodyText1: TextStyle(
-                  color: Colors.blue,
-                ),
-                bodyText2: TextStyle(
-                  color: Colors.blue,
-                )
-              ),*/
               bottomNavigationBarTheme: BottomNavigationBarThemeData(
                 type: BottomNavigationBarType.fixed,
                 elevation: 20.0,
               ),
             ),
             home: HomePage(),
+            darkTheme: ThemeData(
+              scaffoldBackgroundColor: Colors.black12,
+              appBarTheme: AppBarTheme(
+                backgroundColor: Colors.black12,
+                backwardsCompatibility: false,
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  statusBarColor: Colors.black12,
+                  statusBarIconBrightness: Brightness.light,
+                ),
+                titleTextStyle: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              textTheme: TextTheme(
+                bodyText1: TextStyle(
+                  color: Colors.blue,
+                ),
+                bodyText2: TextStyle(
+                  color: Colors.blue,
+                )
+              ),
+              bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                type: BottomNavigationBarType.fixed,
+                elevation: 20.0,
+              ),
+            ),
+            themeMode: NewsCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
           );
         },
       ),

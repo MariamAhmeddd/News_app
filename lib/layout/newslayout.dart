@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         {
           //var cubit = NewsCubit.get(context);
           NewsCubit cubit = BlocProvider.of(context);
-          cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
+          //cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
 
           //mariam for test
           /*
@@ -53,6 +53,16 @@ class HomePage extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               title: Text('News App',),
+              actions: [
+                IconButton(
+                    onPressed: (){
+                      NewsCubit.get(context).ChangeMode();
+                    }
+                    , icon: Icon(
+                  Icons.brightness_4,
+                )
+                )
+              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: cubit.currentIndex,

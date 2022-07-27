@@ -86,6 +86,14 @@ class NewsCubit extends Cubit<NewsStates>{
   }
   */
 
+  bool isDark = false;
+
+  void ChangeMode()
+  {
+    isDark = !isDark;
+    emit(CubitModeState());
+  }
+
   //mariam screens of catagories
 
   List<Widget> catagoriesScreens =
@@ -121,7 +129,8 @@ class NewsCubit extends Cubit<NewsStates>{
             //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
             //'apiKey' : '09ced2520beb4a09975d993933e45350'
             //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
-            'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+            //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+            'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
           },
         ).then((value)
         {
@@ -193,7 +202,8 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
-          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
         },
       ).then((value)
       {
@@ -229,7 +239,8 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
-        'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          // 'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
         },
       ).then((value)
       {
@@ -265,7 +276,8 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
-          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
         },
       ).then((value)
       {
@@ -296,7 +308,8 @@ class NewsCubit extends Cubit<NewsStates>{
         //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
         //'apiKey' : '09ced2520beb4a09975d993933e45350'
         //'apiKey':'64dc4ac09c7140bc8d73151e446b88d4',
-        'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+        //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+        'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
       }
     ).then((value)
         {
@@ -389,13 +402,12 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3'
-          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
         },
       ).then((value)
       {
-        //print(value!.data.toString());
         discovery = value.data['articles'];
-        //print(discovery[0]['title']);
         emit(NewsGetDiscoverySuccessState());
       }).catchError((error)
       {

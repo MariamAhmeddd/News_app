@@ -2,7 +2,7 @@ abstract class NewsStates {}
 
 //class InitialState extends NewsStates {}
 
-//class CubitBottonNav extends NewsStates {}
+class CubitModeState extends NewsStates {}
 
 class GetBusinessSuccess extends NewsStates {}
 
