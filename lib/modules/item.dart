@@ -18,7 +18,7 @@ Widget buildItem(artical,context)
      InkWell(
        onTap: (){
          // pic , title ,detail , date
-         navigateTo(context, details('${artical['urlToImage']}', '${artical['title']}','${artical['description']}','${artical['publishedAt']}'));
+         navigateTo(context, details('${artical['urlToImage']}', '${artical['title']}','${artical['description']}','${artical['publishedAt']}','${artical['url']}'));
        },
        child: Center(
          child: Column(
@@ -253,7 +253,7 @@ Widget buildListForCatagoryScreen(list,context)
 Widget buildArticleItem(context,article) => InkWell(
   onTap: (){
     // pic , title ,detail , date
-    navigateTo(context, details('${article['urlToImage']}', '${article['title']}','${article['description']}','${article['publishedAt']}'));
+    navigateTo(context, details('${article['urlToImage']}', '${article['title']}','${article['description']}','${article['publishedAt']}','${article['url']}'));
   },
   child:   Container(
 
