@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testt/layout/screens/busniess.dart';
 import 'package:testt/layout/screens/details.dart';
+import 'package:testt/layout/screens/discovery_screen.dart';
 import 'package:testt/layout/screens/health.dart';
 import 'package:testt/layout/screens/science.dart';
 import 'package:testt/layout/screens/sports.dart';
@@ -79,7 +80,20 @@ Widget nave()
     backgroundColor: Colors.white,
     fixedColor: Colors.black,
     onTap: (index){
+      /*
+      if(index == 0)
+      {
+        navigateTo(context, DiscoveryScreen());
+      }
+      else if(index == 1)
+      {
 
+      }
+      else
+      {
+
+      }
+      */
     },
     items: [
       BottomNavigationBarItem(

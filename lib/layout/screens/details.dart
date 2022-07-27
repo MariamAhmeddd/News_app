@@ -19,11 +19,7 @@ class details extends StatelessWidget{
   late String url;
   Widget build(BuildContext context) {
     // TODO: implement build
-    return InkWell(
-      onTap: (){
-        navigateTo(context, WebViewScreen(url));
-      },
-      child: Scaffold(
+    return  Scaffold(
           body:SafeArea(
             child: ListView(
               children: [
@@ -43,8 +39,13 @@ class details extends StatelessWidget{
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Text(titile
-                    ,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                  child: InkWell(
+                    onTap: (){
+                      navigateTo(context, WebViewScreen(url));
+                    },
+                    child: Text(titile
+                      ,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                  ),
                 ),
 
                 Expanded(
@@ -60,7 +61,6 @@ class details extends StatelessWidget{
             ),
           )
           ,bottomNavigationBar: nave()
-      ),
     );
   }
 }
