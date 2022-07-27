@@ -33,11 +33,7 @@ class BusinessScreen extends StatelessWidget {
                 body: ConditionalBuilder(
                   fallback: (context) => Center(child: Text('this is not true')),
                   condition: state is! GetBusinessload,
-                  builder: (context) => /*ListView.separated(
-            itemBuilder: (context,index) => buildItem(),
-            separatorBuilder:  (context, index) => myDivider(),
-            itemCount: 10),*/
-                  CarouselSlider.builder(
+                  builder: (context) => CarouselSlider.builder(
                     options: CarouselOptions(
                       height: 1500,
 

@@ -18,37 +18,6 @@ class HomePage extends StatelessWidget {
           NewsCubit cubit = BlocProvider.of(context);
           //cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
 
-          //mariam for test
-          /*
-          return Scaffold(
-            appBar: AppBar(
-              title: Text(
-                "News App",
-              ),
-              actions: [
-                IconButton(
-                  onPressed: () {
-                    navigateTo(context, SearchScreen());
-                  },
-                  icon: Icon(
-                    Icons.search,
-                  ),
-                ),
-              ],
-            ),
-            body: cubit.screens[cubit.currentIndex],
-            bottomNavigationBar: BottomNavigationBar(
-              items: cubit.bottomItems,
-              onTap: (idx)
-              {
-                cubit.changeBottomNavBar(idx);
-              },
-              type: BottomNavigationBarType.fixed,
-            ),
-          );
-          */
-
-          //Sohyla
 
           return Scaffold(
             appBar: AppBar(

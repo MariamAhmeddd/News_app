@@ -65,15 +65,6 @@ Widget buildItem(artical,context)
      );
 }
 
-Widget myDivider() => Padding(
-  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-  child: Container(
-    width: double.infinity,
-    height: 1.0,
-    color: Colors.grey[300],
-  ),
-);
-
 Widget nave()
 {
   return BottomNavigationBar(
@@ -153,7 +144,6 @@ Widget buildItemForCatagoryScreen(artical,context)
     text = 'TECHNOLOGY';
   }
   return
-    //padding: const EdgeInsets.all(0.0),
     InkWell(
       onTap: (){
         if(artical == 0)
@@ -261,8 +251,6 @@ Widget buildListForCatagoryScreen(list,context)
   );
 }
 
-
-//Sohyla
 
 Widget buildArticleItem(context,article) => InkWell(
   onTap: (){

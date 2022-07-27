@@ -1,7 +1,5 @@
 abstract class NewsStates {}
 
-//class InitialState extends NewsStates {}
-
 class CubitModeState extends NewsStates {}
 
 class GetBusinessSuccess extends NewsStates {}
@@ -39,8 +37,6 @@ class GetSearchSuccess extends NewsStates {}
 class GetSearchfail extends NewsStates {}
 
 class GetSearchload extends NewsStates {}
-
-//Sohyla
 
 class NewsInitialState extends NewsStates {}
 

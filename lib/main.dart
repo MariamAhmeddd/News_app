@@ -33,18 +33,6 @@ class MyApp extends StatelessWidget {
           NewsCubit cubit = BlocProvider.of(context);
           cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
 
-          //mariam for test
-          /*
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-            ),
-            home: NewsLayout(),
-          );
-          */
-
-          //Sohyla
-
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(

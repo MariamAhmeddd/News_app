@@ -21,70 +21,6 @@ class NewsCubit extends Cubit<NewsStates>{
 
   static NewsCubit get(context) => BlocProvider.of(context);
 
-  //mariam for test :
-  /*
-  List<BottomNavigationBarItem> bottomItems =
-  [
-    BottomNavigationBarItem(
-        icon: Icon(
-          Icons.business
-        ),
-      label: "Business"
-    ),
-    BottomNavigationBarItem(
-        icon: Icon(
-            Icons.sports
-        ),
-        label: "Sports"
-    ),
-    BottomNavigationBarItem(
-        icon: Icon(
-            Icons.science
-        ),
-        label: "Science"
-    ),
-    BottomNavigationBarItem(
-        icon: Icon(
-            Icons.health_and_safety,
-        ),
-        label: "Health"
-    ),
-    BottomNavigationBarItem(
-        icon: Icon(
-            Icons.biotech_rounded,
-        ),
-        label: "Technology",
-    ),
-  ];
-
-
-
-  void changeBottomNavBar(int idx)
-  {
-    currentIndex = idx;
-    if (currentIndex == 0)
-    {
-        getBusinessData();
-    }
-    if (currentIndex == 1)
-    {
-      getSportsData();
-    }
-    if (currentIndex == 2)
-    {
-      getScienceData();
-    }
-    if (currentIndex == 3)
-    {
-      getHealthData();
-    }
-    if (currentIndex == 4)
-    {
-      getTechnologyData();
-    }
-    emit(CubitBottonNav());
-  }
-  */
 
   bool isDark = false;
 
@@ -94,7 +30,7 @@ class NewsCubit extends Cubit<NewsStates>{
     emit(CubitModeState());
   }
 
-  //mariam screens of catagories
+  // screens of catagories
 
   List<Widget> catagoriesScreens =
   [
@@ -322,7 +258,6 @@ class NewsCubit extends Cubit<NewsStates>{
     });
   }
 
-  //Sohyla
 
   List<BottomNavigationBarItem> bottomItems =
   [
