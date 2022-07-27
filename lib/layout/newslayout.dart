@@ -5,8 +5,8 @@ import 'package:testt/cubit/states.dart';
 import 'package:testt/layout/screens/search.dart';
 import 'package:testt/modules/item.dart';
 
-class NewsLayout extends StatelessWidget {
-  const NewsLayout({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,10 @@ class NewsLayout extends StatelessWidget {
         {
           //var cubit = NewsCubit.get(context);
           NewsCubit cubit = BlocProvider.of(context);
-          cubit..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
+          cubit..getDiscovery()..getBusinessData()..getSportsData()..getScienceData()..getHealthData()..getTechnologyData();
+
+          //mariam for test
+          /*
           return Scaffold(
             appBar: AppBar(
               title: Text(
@@ -42,6 +45,24 @@ class NewsLayout extends StatelessWidget {
               },
               type: BottomNavigationBarType.fixed,
             ),
+          );
+          */
+
+          //Sohyla
+
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('News App',),
+            ),
+            bottomNavigationBar: BottomNavigationBar(
+              currentIndex: cubit.currentIndex,
+              onTap: (index)
+              {
+                cubit.changeBottomNavBar(index);
+              },
+              items: cubit.bottomItems,
+            ),
+            body: cubit.screens[cubit.currentIndex],
           );
         },
       );

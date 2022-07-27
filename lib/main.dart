@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/cubit.dart';
 import 'package:testt/cubit/states.dart';
@@ -28,11 +29,50 @@ class MyApp extends StatelessWidget {
       child: BlocConsumer<NewsCubit,NewsStates>(
         listener: (context , state) {},
         builder: (context , state) {
+
+          //mariam for test
+          /*
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
             ),
             home: NewsLayout(),
+          );
+          */
+
+          //Sohyla
+
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: Colors.white,
+              appBarTheme: AppBarTheme(
+                backgroundColor: Colors.white,
+                backwardsCompatibility: false,
+                systemOverlayStyle: SystemUiOverlayStyle(
+                  statusBarColor: Colors.white,
+                  statusBarIconBrightness: Brightness.dark,
+                ),
+                titleTextStyle: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              /*textTheme: TextTheme(
+                bodyText1: TextStyle(
+                  color: Colors.blue,
+                ),
+                bodyText2: TextStyle(
+                  color: Colors.blue,
+                )
+              ),*/
+              bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                type: BottomNavigationBarType.fixed,
+                elevation: 20.0,
+              ),
+            ),
+            home: HomePage(),
           );
         },
       ),

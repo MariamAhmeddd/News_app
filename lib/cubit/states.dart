@@ -1,8 +1,8 @@
 abstract class NewsStates {}
 
-class InitialState extends NewsStates {}
+//class InitialState extends NewsStates {}
 
-class CubitBottonNav extends NewsStates {}
+//class CubitBottonNav extends NewsStates {}
 
 class GetBusinessSuccess extends NewsStates {}
 
@@ -39,3 +39,19 @@ class GetSearchSuccess extends NewsStates {}
 class GetSearchfail extends NewsStates {}
 
 class GetSearchload extends NewsStates {}
+
+//Sohyla
+
+class NewsInitialState extends NewsStates {}
+
+class NewsBottomState extends NewsStates {}
+
+class NewsGetDiscoveryLoadingState extends NewsStates {}
+
+class NewsGetDiscoverySuccessState extends NewsStates {}
+
+class NewsGetDiscoveryErrorState extends NewsStates
+{
+  final String error;
+  NewsGetDiscoveryErrorState(this.error);
+}

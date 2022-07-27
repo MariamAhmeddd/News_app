@@ -18,32 +18,38 @@ class BusinessScreen extends StatelessWidget {
       (
       listener: (context, state) {},
       builder: (context, state) {
-        //NewsCubit.get(context).getBusinessData();
         var list =  NewsCubit.get(context).business;
         var size = list.length;
         //print(list.length);
         if(size > 0)
           {
             return
-              ConditionalBuilder(
-                fallback: (context) => Center(child: Text('this is not true')),
-                condition: state is! GetBusinessload,
-                builder: (context) => /*ListView.separated(
+              Scaffold(
+                appBar: AppBar(
+                  title: Text(
+                    'Busniess',
+                  ),
+                ),
+                body: ConditionalBuilder(
+                  fallback: (context) => Center(child: Text('this is not true')),
+                  condition: state is! GetBusinessload,
+                  builder: (context) => /*ListView.separated(
             itemBuilder: (context,index) => buildItem(),
             separatorBuilder:  (context, index) => myDivider(),
             itemCount: 10),*/
-                CarouselSlider.builder(
-                  options: CarouselOptions(
-                    height: 1500,
+                  CarouselSlider.builder(
+                    options: CarouselOptions(
+                      height: 1500,
 
-                    autoPlay: false,
-                    enlargeCenterPage: true,
-                    viewportFraction: 0.9,
-                    //aspectRatio: 2.0,
-                    initialPage: 2,
+                      autoPlay: false,
+                      enlargeCenterPage: true,
+                      viewportFraction: 0.9,
+                      //aspectRatio: 2.0,
+                      initialPage: 2,
+                    ),
+                    itemCount: list.length,
+                    itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) => buildItem(list[itemIndex],context),
                   ),
-                  itemCount: list.length,
-                  itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) => buildItem(list[itemIndex],context),
                 ),
               );
           }

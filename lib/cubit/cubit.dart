@@ -4,19 +4,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/states.dart';
 import 'package:testt/layout/screens/busniess.dart';
+import 'package:testt/layout/screens/categories_screen.dart';
+import 'package:testt/layout/screens/discovery_screen.dart';
 import 'package:testt/layout/screens/health.dart';
+import 'package:testt/layout/screens/saved_screen.dart';
 import 'package:testt/layout/screens/science.dart';
+import 'package:testt/layout/screens/search.dart';
 import 'package:testt/layout/screens/sports.dart';
 import 'package:testt/layout/screens/technology.dart';
 import 'package:testt/network/dio_helper.dart';
 
 class NewsCubit extends Cubit<NewsStates>{
-  NewsCubit() : super(InitialState());
+  NewsCubit() : super(NewsInitialState());
 
   int currentIndex = 0;
 
   static NewsCubit get(context) => BlocProvider.of(context);
 
+  //mariam for test :
+  /*
   List<BottomNavigationBarItem> bottomItems =
   [
     BottomNavigationBarItem(
@@ -51,6 +57,8 @@ class NewsCubit extends Cubit<NewsStates>{
     ),
   ];
 
+
+
   void changeBottomNavBar(int idx)
   {
     currentIndex = idx;
@@ -76,8 +84,11 @@ class NewsCubit extends Cubit<NewsStates>{
     }
     emit(CubitBottonNav());
   }
+  */
 
-  List<Widget> screens =
+  //mariam screens of catagories
+
+  List<Widget> catagoriesScreens =
   [
     BusinessScreen(),
     SportsScreen(),
@@ -85,6 +96,7 @@ class NewsCubit extends Cubit<NewsStates>{
     HealthScreen(),
     TechnologyScreen(),
   ];
+
 
   List<dynamic>business = [];
   List<dynamic>science = [];
@@ -104,9 +116,12 @@ class NewsCubit extends Cubit<NewsStates>{
           url: 'v2/top-headlines',
           query:
           {
-            'country' : 'eg',
+            'country' : 'us',
             'category' : 'business',
-            'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+            //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+            //'apiKey' : '09ced2520beb4a09975d993933e45350'
+            //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+            'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
           },
         ).then((value)
         {
@@ -137,9 +152,12 @@ class NewsCubit extends Cubit<NewsStates>{
         url: 'v2/top-headlines',
         query:
         {
-          'country' : 'eg',
+          'country' : 'us',
           'category' : 'science',
-          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+          //'apiKey' : '09ced2520beb4a09975d993933e45350'
+          //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
         },
       ).then((value)
       {
@@ -170,9 +188,12 @@ class NewsCubit extends Cubit<NewsStates>{
         url: 'v2/top-headlines',
         query:
         {
-          'country' : 'eg',
+          'country' : 'us',
           'category' : 'sport',
-          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+          //'apiKey' : '09ced2520beb4a09975d993933e45350'
+          //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
         },
       ).then((value)
       {
@@ -203,9 +224,12 @@ class NewsCubit extends Cubit<NewsStates>{
         url: 'v2/top-headlines',
         query:
         {
-          'country' : 'eg',
+          'country' : 'us',
           'category' : 'health',
-          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+          //'apiKey' : '09ced2520beb4a09975d993933e45350'
+          //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+        'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
         },
       ).then((value)
       {
@@ -228,7 +252,7 @@ class NewsCubit extends Cubit<NewsStates>{
   void getTechnologyData()
   {
 
-    emit(GetHealthload());
+    emit(GetTechnologyload());
     //print('hereeee5');
     if(technology.length==0)
     {
@@ -236,9 +260,12 @@ class NewsCubit extends Cubit<NewsStates>{
         url: 'v2/top-headlines',
         query:
         {
-          'country' : 'eg',
+          'country' : 'us',
           'category' : 'technology',
-          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+          //'apiKey' : '09ced2520beb4a09975d993933e45350'
+          //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
+          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
         },
       ).then((value)
       {
@@ -266,7 +293,10 @@ class NewsCubit extends Cubit<NewsStates>{
       query:
       {
         'q' : '$val',
-        'apiKey':'64dc4ac09c7140bc8d73151e446b88d4',
+        //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+        //'apiKey' : '09ced2520beb4a09975d993933e45350'
+        //'apiKey':'64dc4ac09c7140bc8d73151e446b88d4',
+        'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
       }
     ).then((value)
         {
@@ -279,5 +309,104 @@ class NewsCubit extends Cubit<NewsStates>{
     });
   }
 
+  //Sohyla
+
+  List<BottomNavigationBarItem> bottomItems =
+  [
+    BottomNavigationBarItem(
+      icon: Icon(
+          Icons.web_rounded
+      ),
+      label: 'Discovery',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(
+          Icons.apps_rounded
+      ),
+      label: 'Categories',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(
+          Icons.search
+      ),
+      label: 'Search',
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(
+          Icons.save_alt_rounded
+      ),
+      label: 'Saved',
+    ),
+  ];
+
+  List<Widget> screens =
+  [
+    DiscoveryScreen(),
+    CategoriesScreen(),
+    SearchScreen(),
+    SavedScreen(),
+  ];
+
+  void changeBottomNavBar(int index)
+  {
+    currentIndex = index;
+
+    if (currentIndex == 0)
+    {
+      getDiscovery();
+    }
+
+    if (currentIndex == 1)
+    {
+      CategoriesScreen();
+    }
+
+    if (currentIndex == 2)
+    {
+      SearchScreen();
+    }
+
+    if (currentIndex == 3)
+    {
+      SavedScreen();
+    }
+
+    emit(NewsBottomState());
+  }
+
+  List<dynamic> discovery = [];
+
+  void getDiscovery()
+  {
+    emit(NewsGetDiscoveryLoadingState());
+    if(discovery.length == 0)
+    {
+      DioHelper.getDataFromDio(
+        url: 'v2/everything',
+        query:
+        {
+          'domains' : 'wsj.com',
+          //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
+          //'apiKey' : '09ced2520beb4a09975d993933e45350'
+          //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3'
+          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+        },
+      ).then((value)
+      {
+        //print(value!.data.toString());
+        discovery = value.data['articles'];
+        //print(discovery[0]['title']);
+        emit(NewsGetDiscoverySuccessState());
+      }).catchError((error)
+      {
+        //print(error.toString());
+        emit(NewsGetDiscoveryErrorState(error.toString()));
+      });
+    }
+    else
+    {
+      emit(NewsGetDiscoverySuccessState());
+    }
+  }
 
 }
