@@ -1,10 +1,15 @@
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/cubit.dart';
 import 'package:testt/cubit/states.dart';
 import 'package:testt/layout/newslayout.dart';
+import 'package:testt/loginnew.dart';
 import 'package:testt/network/dio_helper.dart';
+import 'package:testt/splach.dart';
+import 'package:testt/splach.dart';
 
 // GET
 // base url : https://newsapi.org/
@@ -12,8 +17,9 @@ import 'package:testt/network/dio_helper.dart';
 // query : country=eg&category=business&apiKey=84d9bfdd09d94514ab491388a3e520e4
 // apiKey = bdb4c206eb8c49e7bd6fd024b8b30db3 ((sohyla))
 
-void main() {
-
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   DioHelper.init();
   runApp(const MyApp());
 }
@@ -59,7 +65,7 @@ class MyApp extends StatelessWidget {
                 elevation: 20.0,
               ),
             ),
-            home: HomePage(),
+            home: splach(),
             darkTheme: ThemeData(
               scaffoldBackgroundColor: Colors.black12,
               appBarTheme: AppBarTheme(
@@ -76,12 +82,12 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               textTheme: TextTheme(
-                bodyText1: TextStyle(
-                  color: Colors.blue,
-                ),
-                bodyText2: TextStyle(
-                  color: Colors.blue,
-                )
+                  bodyText1: TextStyle(
+                    color: Colors.blue,
+                  ),
+                  bodyText2: TextStyle(
+                    color: Colors.blue,
+                  )
               ),
               bottomNavigationBarTheme: BottomNavigationBarThemeData(
                 type: BottomNavigationBarType.fixed,

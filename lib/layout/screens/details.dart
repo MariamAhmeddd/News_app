@@ -4,6 +4,15 @@ import 'package:testt/layout/screens/webview.dart';
 import 'package:testt/modules/item.dart';
 
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testt/cubit/cubit.dart';
+import 'package:testt/cubit/states.dart';
+import 'package:testt/layout/screens/webview.dart';
+import 'package:testt/modules/item.dart';
+
+
 class details extends StatelessWidget{
   @override
   details(String p ,String t,String d,d2,u){
@@ -19,7 +28,11 @@ class details extends StatelessWidget{
   late String url;
   Widget build(BuildContext context) {
     // TODO: implement build
-    return  Scaffold(
+    return  BlocConsumer<NewsCubit,NewsStates>(
+      listener: (context,state){},
+      builder: (context,state){
+        NewsCubit cubit = BlocProvider.of(context);
+        return Scaffold(
           body:SafeArea(
             child: ListView(
               children: [
@@ -60,7 +73,17 @@ class details extends StatelessWidget{
               ],
             ),
           )
-          ,bottomNavigationBar: nave(context)
+          ,bottomNavigationBar: BottomNavigationBar(
+          currentIndex: cubit.currentIndex,
+          onTap: (index)
+          {
+            cubit.changeBottomNavBar(index,context);
+          },
+          items: cubit.bottomItems,
+        ),
+        );
+      },
+
     );
   }
 }

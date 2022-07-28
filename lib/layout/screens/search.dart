@@ -23,6 +23,7 @@ class SearchScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TextFormField(
+                  style: TextStyle(color: Colors.blue),
                   autofocus: true,
                   textAlign: TextAlign.center,
                   onChanged: (val) {

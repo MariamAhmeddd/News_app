@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
               currentIndex: cubit.currentIndex,
               onTap: (index)
               {
-                cubit.changeBottomNavBar(index);
+                cubit.changeBottomNavBar(index,context);
               },
               items: cubit.bottomItems,
             ),

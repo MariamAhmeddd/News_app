@@ -3,16 +3,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:testt/cubit/states.dart';
-import 'package:testt/layout/screens/busniess.dart';
+import 'package:testt/layout/newslayout.dart';
 import 'package:testt/layout/screens/categories_screen.dart';
 import 'package:testt/layout/screens/discovery_screen.dart';
 import 'package:testt/layout/screens/health.dart';
-import 'package:testt/layout/screens/saved_screen.dart';
+import 'package:testt/layout/screens/busniess.dart';
 import 'package:testt/layout/screens/science.dart';
+import 'package:testt/modules/item.dart';
+import 'package:testt/network/dio_helper.dart';
+import 'package:testt/layout/screens/technology.dart';
 import 'package:testt/layout/screens/search.dart';
 import 'package:testt/layout/screens/sports.dart';
-import 'package:testt/layout/screens/technology.dart';
-import 'package:testt/network/dio_helper.dart';
 
 class NewsCubit extends Cubit<NewsStates>{
   NewsCubit() : super(NewsInitialState());
@@ -66,7 +67,9 @@ class NewsCubit extends Cubit<NewsStates>{
             //'apiKey' : '09ced2520beb4a09975d993933e45350'
             //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
             //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-            'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+            //'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+            //'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+            'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
           },
         ).then((value)
         {
@@ -102,7 +105,9 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '84d9bfdd09d94514ab491388a3e520e4'
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
-          'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
+          //'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
         },
       ).then((value)
       {
@@ -139,7 +144,9 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
           //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
         },
       ).then((value)
       {
@@ -176,7 +183,9 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
           // 'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
         },
       ).then((value)
       {
@@ -213,7 +222,9 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
           //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
         },
       ).then((value)
       {
@@ -245,7 +256,9 @@ class NewsCubit extends Cubit<NewsStates>{
         //'apiKey' : '09ced2520beb4a09975d993933e45350'
         //'apiKey':'64dc4ac09c7140bc8d73151e446b88d4',
         //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-        'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+       // 'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+       // 'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+        'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
       }
     ).then((value)
         {
@@ -265,7 +278,7 @@ class NewsCubit extends Cubit<NewsStates>{
       icon: Icon(
           Icons.web_rounded
       ),
-      label: 'Discovery',
+      label: 'Home',
     ),
     BottomNavigationBarItem(
       icon: Icon(
@@ -279,12 +292,7 @@ class NewsCubit extends Cubit<NewsStates>{
       ),
       label: 'Search',
     ),
-    BottomNavigationBarItem(
-      icon: Icon(
-          Icons.save_alt_rounded
-      ),
-      label: 'Saved',
-    ),
+
   ];
 
   List<Widget> screens =
@@ -292,32 +300,28 @@ class NewsCubit extends Cubit<NewsStates>{
     DiscoveryScreen(),
     CategoriesScreen(),
     SearchScreen(),
-    SavedScreen(),
+
   ];
 
-  void changeBottomNavBar(int index)
+  void changeBottomNavBar(int index,context)
   {
     currentIndex = index;
 
     if (currentIndex == 0)
     {
-      getDiscovery();
+      navigateTo(context,HomePage());
     }
 
     if (currentIndex == 1)
     {
-      CategoriesScreen();
+      navigateTo(context,CategoriesScreen());
     }
 
     if (currentIndex == 2)
     {
-      SearchScreen();
+      navigateTo(context,SearchScreen());
     }
 
-    if (currentIndex == 3)
-    {
-      SavedScreen();
-    }
 
     emit(NewsBottomState());
   }
@@ -338,7 +342,9 @@ class NewsCubit extends Cubit<NewsStates>{
           //'apiKey' : '09ced2520beb4a09975d993933e45350'
           //'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3'
           //'apiKey' : 'bed8563ef8494d6684bec7083ec62295',
-          'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+          //'apiKey' : '90e7eea65b9a465582a11ac7fe4864de',
+         // 'apiKey' : '4088f5df7aaa4fd1be731ad236058a2a',
+          'apiKey' : 'bdb4c206eb8c49e7bd6fd024b8b30db3',
         },
       ).then((value)
       {

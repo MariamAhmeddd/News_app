@@ -3,9 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:testt/cubit/cubit.dart';
 import 'package:testt/cubit/states.dart';
 import 'package:testt/modules/item.dart';
+import 'package:testt/cubit/cubit.dart';
 
 class ScienceScreen extends StatelessWidget {
   const ScienceScreen({Key? key}) : super(key: key);
