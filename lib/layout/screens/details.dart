@@ -60,7 +60,7 @@ class details extends StatelessWidget{
               ],
             ),
           )
-          ,bottomNavigationBar: nave()
+          ,bottomNavigationBar: nave(context)
     );
   }
 }

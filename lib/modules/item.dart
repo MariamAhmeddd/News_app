@@ -4,6 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:testt/layout/newslayout.dart';
 import 'package:testt/layout/screens/busniess.dart';
 import 'package:testt/layout/screens/details.dart';
 import 'package:testt/layout/screens/discovery_screen.dart';
@@ -65,16 +67,16 @@ Widget buildItem(artical,context)
      );
 }
 
-Widget nave()
+Widget nave(context)
 {
   return BottomNavigationBar(
     backgroundColor: Colors.white,
     fixedColor: Colors.black,
     onTap: (index){
-      /*
+
       if(index == 0)
       {
-        navigateTo(context, DiscoveryScreen());
+        navigateTo(context, HomePage());
       }
       else if(index == 1)
       {
@@ -84,7 +86,7 @@ Widget nave()
       {
 
       }
-      */
+
     },
     items: [
       BottomNavigationBarItem(
